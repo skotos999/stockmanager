@@ -8,17 +8,18 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.eq;
 
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
+
 import static org.hamcrest.core.IsEqual.equalTo;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import java.math.BigDecimal;
+import products.Cow;
+import resources.Wheat;
+import util.Cost;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestDemandApproximator {
 
     private DemandApproximator demandApproximator;
- mn
+
     @Before
     public void setUp() {
         demandApproximator = new DemandApproximator();
@@ -32,7 +33,6 @@ public class TestDemandApproximator {
 
     @Test
     public void test(){
-        Cow cow = new Cow(new Price(3, new Wheat()));
 
     }
 
