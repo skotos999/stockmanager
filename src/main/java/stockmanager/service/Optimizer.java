@@ -1,4 +1,4 @@
-package stockmanager;
+package stockmanager.service;
 
 public class Optimizer {
 

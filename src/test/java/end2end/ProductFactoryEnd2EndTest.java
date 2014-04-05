@@ -1,4 +1,4 @@
-package stockmanager;
+package end2end;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,24 +11,21 @@ import org.junit.runner.RunWith;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import org.mockito.runners.MockitoJUnitRunner;
-import products.Cow;
-import resources.Wheat;
-import util.Cost;
+import stockmanager.service.DemandApproximator;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestDemandApproximator {
+public class ProductFactoryEnd2EndTest {
 
-    private DemandApproximator demandApproximator;
-
+    private ApplicationRunner application;
     @Before
     public void setUp() {
-        demandApproximator = new DemandApproximator();
+        application = new ApplicationRunner();
     }
 
-    //naming convention: http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html
     @Test
-    public void approxDemand_5LengthDemandHistory_Calculated() {
-        assertThat("", demandApproximator.approximate(new int[]{16, 25, 22, 19, 24}), equalTo(21.2));
+    public void calculatePrioritiesWhenAllPrioritiesAreDistinctAtFirstCalculation() {
+        application.start();
+
     }
 
     @Test
