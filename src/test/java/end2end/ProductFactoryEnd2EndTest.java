@@ -25,6 +25,8 @@ public class ProductFactoryEnd2EndTest {
     @Test
     public void calculatePrioritiesWhenAllPrioritiesAreDistinctAtFirstCalculation() {
         application.start();
+        application.calculate();
+        application.showsPriority();
 
     }
 

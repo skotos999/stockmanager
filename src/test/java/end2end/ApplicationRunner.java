@@ -22,4 +22,10 @@ public class ApplicationRunner {
         driver.hasTitle(MainWindow.APPLICATION_TITLE);
     }
 
+    public void showsPriority() {
+    }
+
+    public void calculate() {
+
+    }
 }
