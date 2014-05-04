@@ -40,4 +40,19 @@ public enum Sheep implements Product {
         if (preferenceIndex < 0) return resourcePreferences.get(0);
         return resourcePreferences.get(preferenceIndex);
     }
+
+    @Override
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public int getSalePrice() {
+        return salePrice;
+    }
 }

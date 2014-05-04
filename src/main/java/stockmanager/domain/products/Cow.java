@@ -38,4 +38,18 @@ public enum Cow implements Product {
         this.costs.put(Wheat.INSTANCE, new Cost(3, Wheat.INSTANCE));
         this.costs.put(Corn.INSTANCE, new Cost(11.25, Corn.INSTANCE));
     }
+    @Override
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public int getSalePrice() {
+        return salePrice;
+    }
 }

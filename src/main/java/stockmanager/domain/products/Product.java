@@ -12,4 +12,10 @@ public interface Product extends Stockable {//Cow(45, new HashMap<Resource, Cost
     public int getResourcePreferenceFor(Resource resource) ;
 
     public Resource getResourceByPreference(int preferenceIndex);
+
+    public int getPriority();
+
+    public int getSalePrice();
+
+    public void setPriority(int priority);
 }
