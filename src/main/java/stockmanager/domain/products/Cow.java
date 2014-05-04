@@ -4,6 +4,7 @@ import stockmanager.domain.resources.Corn;
 import stockmanager.domain.resources.Resource;
 import stockmanager.domain.resources.Wheat;
 import stockmanager.domain.Cost;
+import stockmanager.domain.stock.Stockable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
 public enum Cow implements Product {
     INSTANCE {
         @Override
-        public Cost getCostIn(Resource unit) {
+        public Double getCostIn(Resource unit) {
             return null;
         }
 
@@ -21,7 +22,7 @@ public enum Cow implements Product {
         }
 
         @Override
-        public Resource getResourcebyPreference(int preferenceIndex) {
+        public Resource getResourceByPreference(int preferenceIndex) {
             return null;
         }
     };

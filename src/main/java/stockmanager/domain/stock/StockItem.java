@@ -11,13 +11,4 @@ public class StockItem {
         this.qty = qty;
     }
 
-    public long getQty() {
-        return qty;
-    }
-
-    public long subtract(long qty) {
-        long result = this.qty - qty;
-        if (result >= 0) return result;
-        return 0;
-    }
 }

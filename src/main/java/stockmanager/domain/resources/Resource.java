@@ -1,5 +1,7 @@
 package stockmanager.domain.resources;
 
-public interface  Resource {
+import stockmanager.domain.stock.Stockable;
+
+public interface  Resource extends Stockable {
 
 }
