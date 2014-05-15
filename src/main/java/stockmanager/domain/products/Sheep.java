@@ -3,7 +3,6 @@ package stockmanager.domain.products;
 import stockmanager.domain.resources.Corn;
 import stockmanager.domain.resources.Resource;
 import stockmanager.domain.resources.Wheat;
-import stockmanager.domain.Cost;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,12 +18,13 @@ public enum Sheep implements Product {
 
     private Sheep() {
         this.salePrice = 35;
-        this.costs = new HashMap<Resource, Double>();
-        this.resourcePreferences = new ArrayList<Resource>();
+        this.costs = new HashMap<>();
+        this.resourcePreferences = new ArrayList<>();
         resourcePreferences.add(Wheat.INSTANCE);
         resourcePreferences.add(Corn.INSTANCE);
         this.costs.put(Wheat.INSTANCE, 2.33);
-        this.costs.put(Corn.INSTANCE,8.75);
+        this.costs.put(Corn.INSTANCE, 8.75);
+        this.priority = 2;
     }
 
     public Double getCostIn(Resource unit) {
@@ -36,19 +36,21 @@ public enum Sheep implements Product {
     }
 
     public Resource getResourceByPreference(int preferenceIndex) {
-        if (preferenceIndex >= resourcePreferences.size()) return resourcePreferences.get(resourcePreferences.size() - 1);
+        if (preferenceIndex >= resourcePreferences.size())
+            //return resourcePreferences.get(resourcePreferences.size() - 1);
+            return resourcePreferences.get(0);
         if (preferenceIndex < 0) return resourcePreferences.get(0);
         return resourcePreferences.get(preferenceIndex);
     }
 
     @Override
-    public void setPriority(int priority) {
-        this.priority = priority;
+    public int getPriority() {
+        return priority;
     }
 
     @Override
-    public int getPriority() {
-        return priority;
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 
     @Override

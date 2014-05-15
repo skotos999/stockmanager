@@ -113,6 +113,7 @@
           <forms/>
         </constraints>
         <properties>
+          <labelFor value="364b5"/>
           <text value="Priority"/>
         </properties>
       </component>
@@ -140,10 +141,10 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Calculate"/>
+          <text value="&amp;Calculate"/>
         </properties>
       </component>
-      <component id="364b5" class="javax.swing.JTextField" binding="cowPrioTextField">
+      <component id="364b5" class="javax.swing.JTextField" binding="cowPriorTextField">
         <constraints>
           <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -156,7 +157,7 @@
           <enabled value="false"/>
         </properties>
       </component>
-      <component id="807e5" class="javax.swing.JTextField" binding="sheepPrioTextField">
+      <component id="807e5" class="javax.swing.JTextField" binding="sheepPriorTextField">
         <constraints>
           <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -169,7 +170,7 @@
           <enabled value="false"/>
         </properties>
       </component>
-      <component id="e341b" class="javax.swing.JTextField" binding="pigPrioTextField">
+      <component id="e341b" class="javax.swing.JTextField" binding="pigPriorTextField">
         <constraints>
           <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

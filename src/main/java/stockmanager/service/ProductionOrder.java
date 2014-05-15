@@ -1,4 +1,4 @@
-package stockmanager.domain;
+package stockmanager.service;
 
 import stockmanager.domain.products.Product;
 
@@ -20,4 +20,7 @@ public class ProductionOrder {
         return qty;
     }
 
+    public void setQty(long qty) {
+        this.qty -= qty;
+    }
 }

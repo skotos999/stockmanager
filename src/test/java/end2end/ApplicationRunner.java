@@ -6,7 +6,7 @@ public class ApplicationRunner {
 
     private ApplicationDriver driver;
     public void start() {
-        Thread thread = new Thread("Test Application") {
+        Thread thread = new Thread("TestProduce Application") {
             @Override public void run() {
                 try {
                     Main.main(null);
