@@ -27,7 +27,7 @@ public enum Warehouse {
         productMax = new HashMap<>();
         productMax.put(Cow.INSTANCE, 50L);
         productMax.put(Sheep.INSTANCE, 75L);
-        productMax.put(Pig.INSTANCE, 125L);
+        productMax.put(Pig.INSTANCE, 120L);
     }
 
     public long getQty(Stockable item) {

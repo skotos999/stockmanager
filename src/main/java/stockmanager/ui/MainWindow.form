@@ -7,8 +7,6 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:11px:noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -18,20 +16,26 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
-    <colspec value="center:50px:noGrow"/>
+    <colspec value="center:max(d;4px):grow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="center:d:grow"/>
+    <colspec value="center:max(d;4px):grow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="center:d:grow"/>
+    <colspec value="center:max(d;4px):grow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="center:d:grow"/>
+    <colspec value="center:max(d;4px):grow"/>
+    <colspec value="left:5px:noGrow"/>
+    <colspec value="fill:d:grow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:d:grow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):grow"/>
     <constraints>
-      <xy x="20" y="20" width="800" height="600"/>
+      <xy x="20" y="20" width="800" height="260"/>
     </constraints>
     <properties>
-      <minimumSize width="800" height="600"/>
+      <minimumSize width="800" height="260"/>
       <name value="Animal Breeding"/>
-      <preferredSize width="800" height="600"/>
+      <preferredSize width="800" height="260"/>
     </properties>
     <border type="none"/>
     <children>
@@ -77,7 +81,7 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="StockMax"/>
         </properties>
       </component>
       <component id="831ab" class="javax.swing.JLabel">
@@ -86,30 +90,21 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="Stock"/>
         </properties>
       </component>
-      <component id="e6296" class="javax.swing.JLabel">
+      <component id="2006e" class="javax.swing.JLabel">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="2006e" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
+          <text value="Sold"/>
         </properties>
       </component>
       <component id="ff77b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -119,32 +114,202 @@
       </component>
       <component id="1b55b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="Produced"/>
         </properties>
       </component>
       <component id="221d3" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="1221f" class="javax.swing.JButton" binding="calculateButton" default-binding="true">
-        <constraints>
-          <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="&amp;Calculate"/>
+          <text value="NewStock"/>
         </properties>
       </component>
       <component id="364b5" class="javax.swing.JTextField" binding="cowPriorTextField">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="807e5" class="javax.swing.JTextField" binding="sheepPriorTextField">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="e341b" class="javax.swing.JTextField" binding="pigPriorTextField">
+        <constraints>
+          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="35e9e" class="javax.swing.JTextField" binding="cowMaxField">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="973c1" class="javax.swing.JTextField" binding="sheepMaxField">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="23e86" class="javax.swing.JTextField" binding="pigMaxField">
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="a1259" class="javax.swing.JTextField" binding="cowStockField">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="true"/>
+          <enabled value="true"/>
+          <horizontalAlignment value="0"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="3e726" class="javax.swing.JTextField" binding="sheepStockField">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="true"/>
+          <enabled value="true"/>
+          <horizontalAlignment value="0"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="2f48b" class="javax.swing.JTextField" binding="pigStockField">
+        <constraints>
+          <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="true"/>
+          <enabled value="true"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="29134" class="javax.swing.JTextField" binding="cowSoldField">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="d290c" class="javax.swing.JTextField" binding="sheepSoldField">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="d0e3a" class="javax.swing.JTextField" binding="pigSoldField">
+        <constraints>
+          <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="78925" class="javax.swing.JTextField" binding="cowProducedField">
         <constraints>
           <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -154,10 +319,12 @@
         <properties>
           <columns value="5"/>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
         </properties>
       </component>
-      <component id="807e5" class="javax.swing.JTextField" binding="sheepPriorTextField">
+      <component id="28e09" class="javax.swing.JTextField" binding="sheepProducedField">
         <constraints>
           <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -167,10 +334,12 @@
         <properties>
           <columns value="5"/>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
         </properties>
       </component>
-      <component id="e341b" class="javax.swing.JTextField" binding="pigPriorTextField">
+      <component id="8c2cb" class="javax.swing.JTextField" binding="pigProducedField">
         <constraints>
           <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -180,7 +349,124 @@
         <properties>
           <columns value="5"/>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="879ab" class="javax.swing.JTextField" binding="cowNewStockField">
+        <constraints>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="ed59d" class="javax.swing.JTextField" binding="sheepNewStockField">
+        <constraints>
+          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="5c57" class="javax.swing.JTextField" binding="pigNewStockField">
+        <constraints>
+          <grid row="12" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <columns value="5"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="ede06" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font size="14"/>
+          <text value="Resources"/>
+        </properties>
+      </component>
+      <component id="89098" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <labelFor value="177bc"/>
+          <text value="Corn"/>
+        </properties>
+      </component>
+      <component id="7fece" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <labelFor value="c1d37"/>
+          <text value="Wheat"/>
+        </properties>
+      </component>
+      <component id="c1d37" class="javax.swing.JTextField" binding="wheatField">
+        <constraints>
+          <grid row="4" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <minimumSize width="6" height="22"/>
+          <preferredSize width="61" height="22"/>
+        </properties>
+      </component>
+      <component id="177bc" class="javax.swing.JTextField" binding="cornField">
+        <constraints>
+          <grid row="4" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <preferredSize width="61" height="22"/>
+        </properties>
+      </component>
+      <component id="1221f" class="javax.swing.JButton" binding="calculateButton" default-binding="true">
+        <constraints>
+          <grid row="14" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="true"/>
+          <contentAreaFilled value="true"/>
+          <defaultCapable value="true"/>
+          <doubleBuffered value="false"/>
+          <enabled value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="&amp;Calculate"/>
         </properties>
       </component>
     </children>

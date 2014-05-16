@@ -1,6 +1,9 @@
 package stockmanager.service;
 
+import stockmanager.domain.products.Cow;
+import stockmanager.domain.products.Pig;
 import stockmanager.domain.products.Product;
+import stockmanager.domain.products.Sheep;
 import stockmanager.domain.resources.Corn;
 import stockmanager.domain.resources.Wheat;
 import stockmanager.domain.stock.Warehouse;
@@ -16,6 +19,7 @@ public enum ProductFactory {
     }
 
     public void phase(List<ProductionOrder> productionOrders, int phaseIndex) {
+        System.out.println(warehouse.getQty(Wheat.INSTANCE) + " " + warehouse.getQty(Corn.INSTANCE));
         for (ProductionOrder productionOrder : productionOrders) {
             Product product = productionOrder.getProduct();
             long wantedQty = 0;
@@ -58,7 +62,8 @@ public enum ProductFactory {
                 }
             }
         }
-        //System.out.println(warehouse.getQty(Wheat.INSTANCE) + " " + warehouse.getQty(Corn.INSTANCE));
+        System.out.println(warehouse.getQty(Wheat.INSTANCE) + " " + warehouse.getQty(Corn.INSTANCE));
+        System.out.println(warehouse.getQty(Cow.INSTANCE) + " " + warehouse.getQty(Sheep.INSTANCE) + " " + warehouse.getQty(Pig.INSTANCE));
     }
 
     public void produce(List<ProductionOrder> productionOrders) {

@@ -44,6 +44,11 @@
             <artifactId>forms</artifactId>
             <version>1.2.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.178</version>
+        </dependency>
     </dependencies>
 
 </project>

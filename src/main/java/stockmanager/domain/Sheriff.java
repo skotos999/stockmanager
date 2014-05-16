@@ -1,5 +1,6 @@
 package stockmanager.domain;
 
+import stockmanager.db.JDBCHistoryDAO;
 import stockmanager.domain.products.Cow;
 import stockmanager.domain.products.Pig;
 import stockmanager.domain.products.Product;
@@ -39,7 +40,7 @@ public class Sheriff {
             productionOrders.add(new ProductionOrder(product, quantities[i++]));
         }
 
-        Collections.sort(productionOrders,new Comparator<ProductionOrder>() {
+        Collections.sort(productionOrders, new Comparator<ProductionOrder>() {
             @Override
             public int compare(ProductionOrder o1, ProductionOrder o2) {
                 return o1.getProduct().getPriority() - o2.getProduct().getPriority();
@@ -50,12 +51,15 @@ public class Sheriff {
 
     public void startProduction() {
         //TODO setUpStock
-        ProductFactory.INSTANCE.produce(createProductionOrders(new ArrayList<Product>() {
+        List<Product> products = new ArrayList<Product>() {
             {
                 add(Cow.INSTANCE);
                 add(Sheep.INSTANCE);
                 add(Pig.INSTANCE);
             }
-        }, new Long[]{10L, 20L, 30L}));
+        };
+
+        ProductFactory.INSTANCE.produce(createProductionOrders(products, JDBCHistoryDAO.INSTANCE.calculateSoldValues()));
+
     }
 }
