@@ -12,11 +12,13 @@ import java.util.*;
 
 public class Sheriff {
 
-    public void calculateProductPriority(List<Product> products, Long[] demands) {
+    public void calculateProductPriority(List<Product> products, Long[] quantities) {
         List<Long> priorities = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            priorities.add(demands[i] * products.get(i).getSalePrice());
+            if (quantities[i] < 0L)
+                quantities[i] = 0L;
+            priorities.add(quantities[i] * products.get(i).getSalePrice());
         }
         if (new HashSet<>(priorities).size() != 3) {
             for (int i = 1; i <= 3; i++) {
@@ -32,10 +34,14 @@ public class Sheriff {
 
     public List<ProductionOrder> createProductionOrders(List<Product> products, Long[] quantities) {
         List<ProductionOrder> productionOrders = new ArrayList<>();
-        int i = 0;
+        for (int i = 0; i < 3; i++) {
+            if (quantities[i] < 0L)
+                quantities[i] = 0L;
+        }
 
         calculateProductPriority(products, quantities);
 
+        int i = 0;
         for (Product product : products) {
             productionOrders.add(new ProductionOrder(product, quantities[i++]));
         }
@@ -50,7 +56,6 @@ public class Sheriff {
     }
 
     public void startProduction() {
-        //TODO setUpStock
         List<Product> products = new ArrayList<Product>() {
             {
                 add(Cow.INSTANCE);
@@ -58,7 +63,6 @@ public class Sheriff {
                 add(Pig.INSTANCE);
             }
         };
-
         ProductFactory.INSTANCE.produce(createProductionOrders(products, JDBCHistoryDAO.INSTANCE.calculateSoldValues()));
 
     }

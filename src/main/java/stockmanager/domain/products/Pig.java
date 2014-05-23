@@ -24,15 +24,10 @@ public enum Pig implements Product {
         this.resourcePreferences = new ArrayList<>();
         resourcePreferences.add(Corn.INSTANCE);
         resourcePreferences.add(Wheat.INSTANCE);
-        this.priority = 3;
     }
 
     public Double getCostIn(Resource unit) {
         return costs.get(unit);
-    }
-
-    public int getResourcePreferenceFor(Resource resource) {
-        return resourcePreferences.indexOf(resource);
     }
 
     public Resource getResourceByPreference(int preferenceIndex) {
@@ -43,17 +38,14 @@ public enum Pig implements Product {
         return resourcePreferences.get(preferenceIndex);
     }
 
-    @Override
     public int getPriority() {
         return priority;
     }
 
-    @Override
     public void setPriority(int priority) {
         this.priority = priority;
     }
 
-    @Override
     public int getSalePrice() {
         return salePrice;
     }

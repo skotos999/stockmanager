@@ -19,20 +19,15 @@ public enum Sheep implements Product {
     private Sheep() {
         this.salePrice = 35;
         this.costs = new HashMap<>();
+        this.costs.put(Wheat.INSTANCE, 2.33);
+        this.costs.put(Corn.INSTANCE, 8.75);
         this.resourcePreferences = new ArrayList<>();
         resourcePreferences.add(Wheat.INSTANCE);
         resourcePreferences.add(Corn.INSTANCE);
-        this.costs.put(Wheat.INSTANCE, 2.33);
-        this.costs.put(Corn.INSTANCE, 8.75);
-        this.priority = 2;
     }
 
     public Double getCostIn(Resource unit) {
         return costs.get(unit);
-    }
-
-    public int getResourcePreferenceFor(Resource resource) {
-        return resourcePreferences.indexOf(resource);
     }
 
     public Resource getResourceByPreference(int preferenceIndex) {
@@ -43,17 +38,14 @@ public enum Sheep implements Product {
         return resourcePreferences.get(preferenceIndex);
     }
 
-    @Override
     public int getPriority() {
         return priority;
     }
 
-    @Override
     public void setPriority(int priority) {
         this.priority = priority;
     }
 
-    @Override
     public int getSalePrice() {
         return salePrice;
     }

@@ -5,10 +5,7 @@ import stockmanager.domain.stock.Stockable;
 
 public interface Product extends Stockable {
 
-
     public Double getCostIn(Resource unit);
-
-    public int getResourcePreferenceFor(Resource resource) ;
 
     public Resource getResourceByPreference(int preferenceIndex);
 

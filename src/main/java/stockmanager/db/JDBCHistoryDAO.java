@@ -15,14 +15,13 @@ public enum JDBCHistoryDAO {
     INSTANCE;
     private Statement stmt = null;
     private PreparedStatement prepStmt = null;
-    private JdbcConnectionPool connectionPool = JdbcConnectionPool.create("jdbc:h2:~/test;INIT=RUNSCRIPT from '~/create.sql'", "", "");
+    private JdbcConnectionPool connectionPool = JdbcConnectionPool.create("jdbc:h2:~/data;INIT=RUNSCRIPT from 'classpath:scripts/create.sql'", "", "");
     private Connection connection = null;
 
     private JDBCHistoryDAO() {
     }
 
     public void setBeforeValuesInDatabase(Integer[] beforeValues) {
-        //String sql = "UPDATE HISTORY SET " + columnNames[i] + "=" + beforeValues[i] + " WHERE ID = (SELECT ID FROM (SELECT * FROM HISTORY ORDER BY ID DESC) WHERE ROWNUM <= 1)";
         String sql = "INSERT INTO HISTORY (COW_BEFORE, SHEEP_BEFORE, PIG_BEFORE) VALUES (?, ?, ?)";
         try {
             connection = connectionPool.getConnection();
