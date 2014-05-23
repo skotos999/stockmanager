@@ -1,5 +1,7 @@
 package stockmanager.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import stockmanager.domain.products.Product;
 import stockmanager.domain.resources.Corn;
 import stockmanager.domain.resources.Wheat;
@@ -9,14 +11,13 @@ import java.util.List;
 
 public enum ProductFactory {
     INSTANCE;
-
+    private static Logger logger = LoggerFactory.getLogger(ProductFactory.class);
     private Warehouse warehouse = Warehouse.INSTANCE;
 
     private ProductFactory() {
     }
 
     public void phase(List<ProductionOrder> productionOrders, int phaseIndex) {
-        //System.out.println(warehouse.getQty(Wheat.INSTANCE) + " " + warehouse.getQty(Corn.INSTANCE));
         for (ProductionOrder productionOrder : productionOrders) {
             Product product = productionOrder.getProduct();
             long wantedQty = 0;
@@ -58,13 +59,19 @@ public enum ProductFactory {
                 }
             }
         }
-        //System.out.println(warehouse.getQty(Wheat.INSTANCE) + " " + warehouse.getQty(Corn.INSTANCE));
-        //System.out.println(warehouse.getQty(Cow.INSTANCE) + " " + warehouse.getQty(Sheep.INSTANCE) + " " + warehouse.getQty(Pig.INSTANCE));
     }
 
     public void produce(List<ProductionOrder> productionOrders) {
+        logger.info("Production has started.");
         for (int phaseIndex = 0; phaseIndex < 3; phaseIndex++) {
+            if (phaseIndex == 0)
+                logger.info("Phase 1: Producing the wanted quantities from primary resources.");
+            else if (phaseIndex == 1)
+                logger.info("Phase 2: Producing the wanted quantities from secondary resources.");
+            else
+                logger.info("Phase 3: Producing over the wanted quantities from primary resources.");
             phase(productionOrders, phaseIndex);
+                logger.info("Done!");
         }
     }
 }
