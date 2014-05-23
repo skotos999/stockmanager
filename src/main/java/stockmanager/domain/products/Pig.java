@@ -11,11 +11,27 @@ import java.util.Map;
 
 public enum Pig implements Product {
     INSTANCE;
+
+    /**
+     * Sale price of Pig.
+     */
     private final int salePrice;
+    /**
+     * Production costs of Pig in each {@link stockmanager.domain.resources.Resource}.
+     */
     private final Map<Resource, Double> costs;
+    /**
+     * The order of resource preferences.
+     */
     private final List<Resource> resourcePreferences;
+    /**
+     * Priority of Pig. Defines the order of production.
+     */
     private int priority;
 
+    /**
+     * Constructs a {@code Pig} object with default values.
+     */
     private Pig() {
         this.salePrice = 25;
         this.costs = new HashMap<>();
@@ -26,10 +42,16 @@ public enum Pig implements Product {
         resourcePreferences.add(Wheat.INSTANCE);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public Double getCostIn(Resource unit) {
         return costs.get(unit);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public Resource getResourceByPreference(int preferenceIndex) {
         if (preferenceIndex >= resourcePreferences.size())
             //return resourcePreferences.get(resourcePreferences.size() - 1);
@@ -38,14 +60,23 @@ public enum Pig implements Product {
         return resourcePreferences.get(preferenceIndex);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public int getPriority() {
         return priority;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void setPriority(int priority) {
         this.priority = priority;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public int getSalePrice() {
         return salePrice;
     }

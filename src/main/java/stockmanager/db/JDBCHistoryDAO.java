@@ -150,7 +150,7 @@ public enum JDBCHistoryDAO {
             return new Long[]{0L, 0L, 0L};
 
         for (int i = 0; i < 3; i++) {
-            sold[i] = Math.abs(before.get(i) - after.get(i));
+            sold[i] = after.get(i) - before.get(i);
             Warehouse.INSTANCE.subtract(products.get(i), sold[i]);
         }
 
