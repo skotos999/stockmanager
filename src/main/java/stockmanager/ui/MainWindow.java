@@ -15,7 +15,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class MainWindow extends JFrame {
     public static final String APPLICATION_TITLE = "Sheriff's Office";
@@ -253,23 +252,24 @@ public class MainWindow extends JFrame {
         sheepMaxField.setText(String.valueOf(Warehouse.INSTANCE.getMax(Sheep.INSTANCE)));
         pigMaxField.setText(String.valueOf(Warehouse.INSTANCE.getMax(Pig.INSTANCE)));
 
-        final List<Long> after = JDBCHistoryDAO.INSTANCE.getLastButOneAfterValues();
-
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (cowStockField.getText().isEmpty() || sheepStockField.getText().isEmpty() || pigStockField.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null,
                             "All fields must be set",
                             "Invalid input",
                             JOptionPane.ERROR_MESSAGE);
-                } else if ((Integer.parseInt(cowStockField.getText()) > after.get(0)) || (Integer.parseInt(sheepStockField.getText()) > after.get(1)) || (Integer.parseInt(pigStockField.getText()) > after.get(2))) {
+                }
+                /*else if ((Integer.parseInt(cowStockField.getText()) > after.get(0)) || (Integer.parseInt(sheepStockField.getText()) > after.get(1)) || (Integer.parseInt(pigStockField.getText()) > after.get(2))) {
                     JOptionPane.showMessageDialog(null,
                             "At least one of the stock values are greater than the actual values in the warehouse.",
                             "Invalid input",
                             JOptionPane.ERROR_MESSAGE);
 
-                } else if ((Integer.parseInt(cowStockField.getText()) < 0) || (Integer.parseInt(sheepStockField.getText()) < 0) || (Integer.parseInt(pigStockField.getText()) < 0) || (Long.parseLong(wheatField.getText()) < 0) || (Long.parseLong(cornField.getText()) < 0)) {
+                }
+                */else if ((Integer.parseInt(cowStockField.getText()) < 0) || (Integer.parseInt(sheepStockField.getText()) < 0) || (Integer.parseInt(pigStockField.getText()) < 0) || (Long.parseLong(wheatField.getText()) < 0) || (Long.parseLong(cornField.getText()) < 0)) {
                     JOptionPane.showMessageDialog(null,
                             "Negative values are not allowed.",
                             "Invalid input",
