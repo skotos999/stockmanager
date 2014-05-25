@@ -8,7 +8,8 @@
     <artifactId>stock-manager</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <description>A useful application for a multiplayer medieval role-play game called Renaissance Kingdoms.</description>
+    <description>A useful application for a multiplayer medieval role-play game called Renaissance Kingdoms.
+    </description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -112,18 +113,18 @@
                             <goal>single</goal>
                         </goals>
                         <phase>package</phase>
-                        <configuration>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <archive>
-                                <manifest>
-                                    <mainClass>${mainClass}</mainClass>
-                                </manifest>
-                            </archive>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>stockmanager.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
